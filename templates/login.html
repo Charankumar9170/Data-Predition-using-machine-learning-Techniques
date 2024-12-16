@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <style> 
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+    }
+    
+    .auth-section {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .auth-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .auth-section form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    header {
+        background-color: #333;
+        color: white;
+        padding: 5px 0;
+        text-align: center;
+    }
+    
+    header nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 20px;
+    }
+    
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        padding: 8px 12px;
+        transition: background-color 0.3s;
+    }
+    nav ul li a:hover {
+        background-color: #45a049;
+        border-radius: 5px;
+    }
+    
+    
+    .auth-section label {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    
+    .auth-section input {
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    .auth-section button {
+        padding: 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    
+    .auth-section button:hover {
+        background-color: #45a049;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        margin-top: 50px;
+    }
+    
+    .contact-info {
+        margin-top: 10px;
+    }
+    
+    .contact-info a {
+        color: #4CAF50;
+        text-decoration: none;
+    }</style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/out">Home</a></li>
+                <li><a href="#content">Techniques</a></li>
+                <li><a href="/tolog">Login</a></li>
+                <li><a href="/tosign">Sign Up</a></li>
+                <li><a href="#details">Details</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Login Section -->
+    <section id="login-page" class="auth-section">
+        <h2>Login</h2>
+        <form  id="usernameForm" action="{{ url_for('login') }}" method="POST" >
+            <label for="username">Username or Email:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Create Account, <a href="/tosign">Sign Up</a></p>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+            {% for message in messages %}
+              <li style="color: red;">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Machine Learning Sensor Accuracy. All Rights Reserved.</p>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:charansagar721@gmail.com">charansagar721@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+91 9133064628</a></p>
+            <p>Address: 8-2-293/bsf/210, Film Nagar, Hyderabad - 500096</p>
+        </div>
+    </footer>
+
+</body>
+</html>

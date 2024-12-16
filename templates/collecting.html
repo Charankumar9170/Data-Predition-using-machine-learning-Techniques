@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color:black;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        nav .nav-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .button-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+     
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color:black;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color:#0056b3;
+        }
+        h1 {
+            text-align: center;
+        }
+        .stop-btn{
+            background-color: red;
+        }
+        .stop-btn:hover{
+            background-color: lightcoral;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">Prediction</div>
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/index">About</a></li>
+            <li><a href="/collecting">Collect Data</a></li>
+            <li><a href="/show-data">View Data</a></li>
+            <li><a href="/index">Run Prediction</a></li>
+            <li><a href="/out">Log out</a></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <h1> Sensor Data Collection</h1>
+        <div class="button-section">
+            <form action="/collect-data" method="POST" >
+                <button type="submit"  onclick="start()">Start Collecting</button>
+            </form><br>
+            <form action="/stop-collection" method="POST">
+                <button type="submit" onclick="stop()" class="stop-btn">Stop </button>
+            </form>
+        </div>
+        <form action="/back-button" method="POST">
+            <button type="submit" >Back</button>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    function start(){
+        var errorMessage = "{{ error_message }}";
+            if (errorMessage) {
+                alert("Error!!: Insert the port" );  // Display the JavaScript popup
+            }
+            else{
+                alert("Collecting Data, wait for 10 seconds!");
+            }
+    }
+    function stop(){
+        alert("Data Collected Successfully!");
+    }
+
+</script>

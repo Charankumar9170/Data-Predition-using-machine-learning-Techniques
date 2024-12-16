@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhancing Sensor Data Accuracy with Machine Learning</title>
+    <style>/* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 5px 0;
+            text-align: center;
+            border-radius: 20px;
+        }
+        
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        header nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #45a049;
+            border-radius: 8px;
+        }
+        
+        .hero {
+            background: url('/static/images/image3.jpeg') no-repeat center center/cover;
+            color: white;
+            padding: 10px 20px;
+            text-align: center; 
+        }
+        
+        h1 {
+            font-size: 3rem;
+        }
+        
+        .auth-section {
+            background-color: #fff;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .auth-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .auth-section label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .auth-section input {
+            margin-bottom: 12px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .auth-section button {
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .auth-section button:hover {
+            background-color: #45a049;
+        }
+        
+        #content {
+            padding: 50px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #content ul {
+            list-style-type: none;
+        }
+        
+        #content ul li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .images {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        
+        .images img {
+            width: 45%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .contact-info a{
+            color:white;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+   
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#content">Techniques</a></li>
+                    <li><a href="/tolog">Login</a></li>
+                    <li><a href="/tosign">Sign Up</a></li>
+                    <li><a href="#details">Details</a></li>
+                </ul>
+            </nav>
+        </header>
+        <h1>Enhancing Sensor Data Accuracy Using Machine Learning</h1>
+        <p>Leverage advanced machine learning techniques to improve the reliability of sensor data.</p>
+    </section>
+
+    <!-- Content Section -->
+    <section id="content">
+        <h2>Machine Learning Techniques for Sensor Data Enhancement</h2>
+        <p>Explore various machine learning techniques used to enhance the accuracy of sensor data:</p>
+        
+        <!-- Techniques List -->
+        <ul>
+            <li><strong>Noise Reduction & Signal Filtering</strong>: Using filters like Kalman and Autoencoders to clean noisy data.</li>
+            <li><strong>Sensor Fusion</strong>: Combining data from multiple sensors for better accuracy using Neural Networks.</li>
+            <li><strong>Anomaly Detection</strong>: Detecting faulty readings with models like Isolation Forests and One-Class SVM.</li>
+            <li><strong>Regression Models for Calibration</strong>: Calibrating sensors using supervised learning algorithms.</li>
+            <li><strong>Time Series Forecasting</strong>: Using LSTM models to predict sensor data for accurate future readings.</li>
+            <li><strong>Data Imputation for Missing Values</strong>: Filling missing values using algorithms like KNN or Autoencoders.</li>
+        </ul>
+        
+        <!-- Images Section -->
+        <div class="images">
+            <img src="{{ url_for('static', filename='images/image1.jpg') }}" alt="My Image">
+            <img src="{{ url_for('static', filename='images/image2.jpg') }}" alt="My Image">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Machine Learning Sensor Accuracy. All Rights Reserved.</p>
+        <div id="details" class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:charansagar721@gmail.com">charansagar721@gmail.com</a></p><br>
+            <p>Phone: <a href="tel:+1234567890">+91 9133064628</a></p><br>
+            <p>Address: 8-2-293/bsf/210, Film Nagar, Hyderabad - 500096</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

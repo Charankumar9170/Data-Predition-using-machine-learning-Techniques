@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style> 
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+    }
+    
+    .auth-section {
+        max-width: 400px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .auth-section h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .auth-section form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    header {
+        background-color: #333;
+        color: white;
+        padding: 5px 0;
+        text-align: center;
+        border-radius: 5px;
+    }
+    
+    header nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    header nav ul li {
+        display: inline;
+        margin: 0 20px;
+    }
+    
+    header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        padding: 8px 12px;
+        transition: background-color 0.3s;
+    }
+    nav ul li a:hover {
+        background-color: #45a049;
+        border-radius: 5px;
+    }
+    
+    
+    .auth-section label {
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    
+    .auth-section input {
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    
+    .auth-section button {
+        padding: 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+    
+    .auth-section button:hover {
+        background-color: #45a049;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        margin-top: 50px;
+    }
+    
+    .contact-info {
+        margin-top: 10px;
+    }
+    
+    .contact-info a {
+        color: #4CAF50;
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/out">Home</a></li>
+                <li><a href="#content">Techniques</a></li>
+                <li><a href="/tolog">Login</a></li>
+                <li><a href="/tosign">Sign Up</a></li>
+                <li><a href="#details">Details</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Sign-Up Section -->
+    <section id="signup-page" class="auth-section">
+        <h2>Sign Up</h2>
+        <form action="/sign-up" method="POST" >
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" name="new-username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" name="new-password" required>
+
+            <label for="proffession">proffession:</label>
+            <input type="text" id="proffession" name="proffession" required>
+
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree" name="degree" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account, <a href="/tolog">Login</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Machine Learning Sensor Accuracy. All Rights Reserved.</p>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:charansagar721@gmail.com">charansagar721@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+91 9133064628</a></p>
+            <p>Address: 8-2-293/bsf/210, Film Nagar, Hyderabad - 500096</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    
+    if (!username.value || !password.value) {
+        e.preventDefault();
+        alert("Please fill in both fields!");
+    }
+    function open(){
+        alert("Successfully created account");
+    }
+});
+</script>

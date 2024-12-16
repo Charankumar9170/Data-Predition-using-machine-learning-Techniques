@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collected Sensor Data</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color:black;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        nav .nav-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">Prediction</div>
+        <ul>
+            <li><a href="/index">Home</a></li>
+            <li><a href="/index">About</a></li>
+            <li><a href="/collecting">Collect Data</a></li>
+            <li><a href="/show-data">View Data</a></li>
+            <li><a href="/index">Run Prediction</a></li>
+            <li><a href="/out">Log out</a></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Collected Sensor Data</h1> 
+        <table>
+            <tr>
+                <th>Timestamp</th>
+                <th>Temperature (°C)</th>
+                <th>Humidity (%)</th>
+            </tr>
+            {% for line in data[1:] %}
+                {% if line.strip() %}
+                    {% set values = line.split(',') %}
+                    <tr>
+                        <td>{{ values[0] }}</td>
+                        <td>{{ values[1] }}</td>
+                        <td>{{ values[2] }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <br>
+        <div class="buttons">
+            <form action="/back-button" method="POST">
+                <button type="submit">Back</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

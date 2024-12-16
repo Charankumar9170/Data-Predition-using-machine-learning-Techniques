@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="{{ url_for('static', filename='js/display.js') }}"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color:black;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        nav .nav-brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .profile-section {
+            margin-bottom: 20px;
+        }
+        .button-section {
+            display: flex;
+            justify-content: space-around;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color:black;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        .hero {
+            background: url('/static/images/image3.jpeg') no-repeat center center/cover;
+            color: white;
+            padding: 10px 20px;
+            text-align: center; 
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+        .contact-info a{
+            color:white;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <section id="home" class="hero">
+        <header>
+            <nav>
+                <div class="nav-brand">Prediction</div>
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/index">About</a></li>
+                    <li><a href="/collecting">Collect Data</a></li>
+                    <li><a href="/show-data">View Data</a></li>
+                    <li><a href="/index">Run Prediction</a></li>
+                    <li><a href="{{ url_for('logout') }}" >Logout</a></li>
+        
+                </ul>
+            </nav>
+        </header>
+        <h1>Enhancing Sensor Data Accuracy Using Machine Learning</h1>
+        <p>Leverage advanced machine learning techniques to improve the reliability of sensor data.</p>
+    </section>
+    <div class="container">
+        <h1>Sensor Data Prediction</h1>
+        <div class="profile-section">
+            <h2>User Profile</h2>
+            <p><strong>Name:<span id="displayUsername"></span></p>
+            <p><strong>Profession:</strong> Student</p>
+            <p><strong>Degree:</strong> B.Tech</p>
+        </div>
+        <div class="button-section">
+            <form action="/run-prediction" method="POST">
+                <button type="submit">Run prediction</button>
+            </form>
+            <form action="/collecting" >
+                <button type="submit">Collect Data</button>
+            </form>
+            <form action="/show-data" method="GET">
+                <button type="submit">View Data</button>
+            </form>
+            <form action="/clear-data" method="POST">
+                <button type="submit" onclick="clear()">Clear Data</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function clear() {
+            alert("Data deleted successfully.");
+        }
+    </script>
+    <footer>
+        <p>© 2024 Machine Learning Sensor Accuracy. All Rights Reserved.</p>
+        <div id="details" class="contact-info">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:charansagar721@gmail.com">charansagar721@gmail.com</a></p><br>
+            <p>Phone: <a href="tel:+1234567890">+91 9133064628</a></p><br>
+            <p>Address: 8-2-293/bsf/210, Film Nagar, Hyderabad - 500096</p>
+        </div>
+    </footer>
+</body>
+</html>
