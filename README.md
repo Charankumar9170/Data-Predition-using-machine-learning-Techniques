@@ -2,6 +2,7 @@
 Enhancing predictive accuracy of sensor data or any other unlabled data set using machine learning techniques. 
 This is a web based application where it consists of an user interface to collect data from various sensors and make predictions using that data set.
 The collected data can be stored  and it can be deleted if need.
+Mcahine Learning technique - Recurrent Neural Networks(Regression technique).
 This application is running on a flask server, that foe the development purpose it was developed using a flask server to run . And it can be deployed if necessary.
 To use this application there are some steps to be followed.
 -> Install all the libraries for the main logic code in the main.py file.
